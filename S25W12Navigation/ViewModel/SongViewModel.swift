@@ -2,6 +2,7 @@ import SwiftUI
 
 @Observable
 final class SongViewModel {
+    var path = NavigationPath()
     private var _songs: [Song] = [
         Song(title: "Love Story", singer: "Taylor Swift", rating: 5, lyrics: "We were both young when I first saw you..."),
         Song(title: "Bohemian Rhapsody", singer: "Queen", rating: 4, lyrics: "Is this the real life? Is this just fantasy?..."),

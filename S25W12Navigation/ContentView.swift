@@ -6,7 +6,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.songs) { song in
-                NavigationLink(destination: SongDetailView(song: song)) {
+                NavigationLink(value: song) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(song.title)
@@ -17,6 +17,9 @@ struct ContentView: View {
                         }
                     }
                 }
+            }
+            .navigationDestination(for: Song.self) { song in
+                SongDetailView(song: song)
             }
         }
     }
